@@ -2,11 +2,11 @@
 
 A Capture The Flag challenge where players must extract a secret flag from an AI security guard through prompt injection techniques.
 
-**Live Demo:** https://ctf-frontend-j7z2xui6m-rahuls-projects-e3326660.vercel.app/
+**Live Demo:** https://ctf-frontend-4xxyf8wno-rahuls-projects-e3326660.vercel.app/
 
 ## About
 
-An interactive web application demonstrating AI security vulnerabilities. Players chat with an AI that has been instructed to protect a secret flag. The goal is to craft prompts that bypass these instructions.
+An interactive web application demonstrating AI security vulnerabilities. Players chat with an AI security guard that has been instructed to protect a secret flag. The goal is to craft prompts that bypass these instructions.
 
 ## Tech Stack
 
@@ -17,21 +17,20 @@ An interactive web application demonstrating AI security vulnerabilities. Player
 
 ## Features
 
-### Completed
+### Checkbox
+
 - [x] Real-time chat interface
 - [x] AI-powered responses
 - [x] Flag detection system
+- [ ] Rate limiting
 - [x] Conversation history
 - [x] Deployed and accessible online
 - [x] Mobile responsive design
-
-### Planned
 - [ ] Customizable difficulty levels
 - [ ] Leaderboard/scoring system
-- [ ] Better UI/UX improvements
 - [ ] Hint system
 - [ ] Per-user session isolation
-- [ ] Rate limiting
+- [x] Updated the UI
 
 ## How to Play
 
@@ -61,8 +60,8 @@ npm start
 
 ## Notes
 
-- First request may take 20-30 seconds (free tier problems :sadface:)
-- Conversation history is shared across all users
+- First request may take 20-30 seconds (Server wake up)
+- Conversation history is shared across all users (for now)
 - Backend resets periodically
 
 ## License
