@@ -5,9 +5,9 @@
 }
 
 body {
-  background: #0f172a;
-  color: #e2e8f0;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0a0a0a;
+  color: #00ff41;
+  font-family: 'Courier New', 'Consolas', monospace;
 }
 
 .App {
@@ -16,90 +16,170 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
-  background: #1e293b;
-  border-radius: 16px;
+  background: #1a1a1a;
+  border-radius: 4px;
   padding: 30px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid #00ff41;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #60a5fa;
+  color: #00ff41;
+  font-size: 42px;
+  letter-spacing: 8px;
+  text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+  margin-bottom: 5px;
 }
 
-.instructions {
-  text-align: center;
-  color: #94a3b8;
-  margin-bottom: 30px;
+.subtitle {
+  color: #888;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.challenge-info {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.challenge-info h2 {
+  color: #00ff41;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.challenge-info p {
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.flag-format {
+  color: #00ff41 !important;
+  font-weight: bold;
+}
+
+.flag-format code {
+  background: #0a0a0a;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: #00ff41;
+  border: 1px solid #333;
+}
+
+.note {
+  color: #666 !important;
+  font-size: 12px !important;
+  font-style: italic;
 }
 
 .victory {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: rgba(0, 255, 65, 0.05);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 4px;
   text-align: center;
   margin-bottom: 20px;
-  animation: slideIn 0.5s ease;
+  border: 2px solid #00ff41;
+  animation: pulse 2s infinite;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
+.victory h2 {
+  color: #00ff41;
+  text-shadow: 0 0 15px rgba(0, 255, 65, 0.8);
+  font-size: 24px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.victory p {
+  color: #999;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.6);
   }
 }
 
 .chat-container {
   height: 400px;
   overflow-y: auto;
-  background: #0f172a;
-  border-radius: 12px;
+  background: #0a0a0a;
+  border-radius: 4px;
   padding: 20px;
   margin-bottom: 20px;
+  border: 1px solid #333;
 }
 
 .message {
   margin-bottom: 20px;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
   animation: fadeIn 0.3s ease;
+  background: #1a1a1a;
+  border-left: 3px solid #00ff41;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .message.user {
-  background: #3b82f6;
-  margin-left: 60px;
+  border-left-color: #666;
+  background: #151515;
 }
 
 .message.assistant {
-  background: #374151;
-  margin-right: 60px;
+  border-left-color: #00ff41;
 }
 
 .message strong {
   display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-  opacity: 0.8;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #00ff41;
+  letter-spacing: 1px;
+}
+
+.message.user strong {
+  color: #888;
 }
 
 .message p {
   margin: 0;
   line-height: 1.6;
+  color: #ccc;
+  font-size: 14px;
 }
 
 .input-container {
@@ -110,60 +190,103 @@ h1 {
 textarea {
   flex: 1;
   padding: 15px;
-  border-radius: 8px;
-  border: 2px solid #334155;
-  background: #0f172a;
-  color: #e2e8f0;
-  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #0a0a0a;
+  color: #00ff41;
+  font-size: 14px;
   resize: none;
-  height: 80px;
-  font-family: inherit;
+  height: 100px;
+  font-family: 'Courier New', monospace;
 }
 
 textarea:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+textarea::placeholder {
+  color: #444;
 }
 
 button {
-  padding: 15px 30px;
-  border-radius: 8px;
-  border: none;
-  background: #3b82f6;
-  color: white;
-  font-size: 16px;
+  padding: 15px 25px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #00ff41;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 button:hover:not(:disabled) {
-  background: #2563eb;
-  transform: translateY(-2px);
+  background: #00ff41;
+  color: #0a0a0a;
+  border-color: #00ff41;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
 }
 
 button:disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
 button.reset {
-  background: #ef4444;
+  background: #0f0f0f;
+  border-color: #444;
+  color: #888;
 }
 
 button.reset:hover:not(:disabled) {
-  background: #dc2626;
+  background: #ff4444;
+  color: #fff;
+  border-color: #ff4444;
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.4);
 }
 
 .chat-container::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 .chat-container::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #0a0a0a;
+  border-radius: 4px;
 }
 
 .chat-container::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #333;
   border-radius: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+  background: #00ff41;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+    letter-spacing: 4px;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .chat-container {
+    height: 300px;
+  }
+  
+  .input-container {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
 }

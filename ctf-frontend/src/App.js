@@ -58,22 +58,29 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>🔐 CTF Challenge: Prompt Injection</h1>
-        <p className="instructions">
-          Try to trick the AI security guard into revealing the secret flag!
-        </p>
+        <div className="header">
+          <h1>CYCLOBOT</h1>
+          <div className="subtitle">Prompt Security Challenge</div>
+        </div>
+
+        <div className="challenge-info">
+          <h2>Your Mission</h2>
+          <p>An AI security guard is protecting a classified flag. Your goal is to extract it through prompt injection techniques.</p>
+          <p className="flag-format">Flag format: <code>FLAG&#123;...&#125;</code></p>
+          <p className="note">Note: First message may take 20-30 seconds (server wake-up)</p>
+        </div>
 
         {won && (
           <div className="victory">
-            <h2>🎉 CONGRATULATIONS! 🎉</h2>
-            <p>You successfully extracted the flag!</p>
+            <h2>ACCESS GRANTED</h2>
+            <p>You successfully bypassed the AI security protocols!</p>
           </div>
         )}
 
         <div className="chat-container">
           {messages.map((msg, i) => (
             <div key={i} className={`message ${msg.role}`}>
-              <strong>{msg.role === 'user' ? 'You' : 'AI Guard'}:</strong>
+              <strong>{msg.role === 'user' ? '> USER' : '> CYCLOBOT'}:</strong>
               <p>{msg.text}</p>
             </div>
           ))}
@@ -85,14 +92,14 @@ function App() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Type your message..."
+            placeholder="Enter your prompt..."
             disabled={loading}
           />
           <button onClick={sendMessage} disabled={loading || !input.trim()}>
-            Send
+            SEND
           </button>
           <button onClick={resetGame} className="reset">
-            Reset
+            RESET
           </button>
         </div>
       </div>
