@@ -43,7 +43,7 @@ function App() {
   };
 
   const resetGame = async () => {
-    await fetch('https://cyclobot.onrender.com/reset', { method: 'POST' });
+    await fetch('https://cyclobot.onrender.com/chat', { method: 'POST' });
     setMessages([]);
     setWon(false);
   };
